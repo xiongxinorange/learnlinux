@@ -10,19 +10,21 @@ Usage()
 Factorial()
 {
 	number=$1
-	if[$number -eq 0]
+	if [ $number -eq 0 ]
 	then
 		sum=1
 	else
 		Factorial $(number -1)
-		sum=number*sum
+		result=$sum
+		number=$number
+		sum=$(number*result)
 	fi
 	return $sum
 }
-if [ -z $1]	#判断是否输入了参数
+if [ -z $1 ]	#判断是否输入了参数
 then Usage
 fi
-if [$1 -lt 0]
+if [ $1 -lt 0 ]	#判断参数是否小于0
 then
 	echo"Please input a number that not less than 0"
 	exit
