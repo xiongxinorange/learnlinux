@@ -3,8 +3,8 @@
 #!/bin/bash
 Usage()
 {
-	echo"usage:2.compression.sh [--list] or [Source compressed file] [Destination path]"
-	echo"Self compression according to the file name suffix"
+	echo "usage:2.compression.sh [--list] or [Source compressed file] [Destination path]"
+	echo "Self compression according to the file name suffix"
 	exit
 }
 List()
@@ -14,14 +14,14 @@ List()
 }
 filename=$1	#获取要解压的文件名
 path=$2		#解压的目的路径
-extension=${file##*.} #获取文件的后缀名
+extension=${filename##*.} #获取文件的后缀名
 if [ -z $filename ]
 then	
 	Usage
-elif [ $filename="--list"]
+elif [ $filename = "--list" ]
 then
 	List
-elif [ $filename && $path ]
+elif [[ $filename && $path ]]
 then
 	case $extension in
 		"zip")
