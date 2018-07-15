@@ -26,9 +26,9 @@ then Usage
 fi
 if [ $1 -lt 0 ]	#判断参数是否小于0
 then
-	echo"Please input a number that not less than 0"
+	echo "Please input a number that not less than 0"
 	exit
 fi
 Factorial $1
-echo "$sum"
+echo $sum
 exit
