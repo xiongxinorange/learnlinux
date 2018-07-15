@@ -9,15 +9,15 @@ Usage()
 }
 Factorial()
 {
-	number=$1
+	local number=$1
 	if [ $number -eq 0 ]
 	then
 		sum=1
 	else
-		Factorial $(number -1)
+		Factorial $((number-1))
 		result=$sum
 		number=$number
-		sum=$(number*result)
+		sum=$((number*result))
 	fi
 	return $sum
 }
