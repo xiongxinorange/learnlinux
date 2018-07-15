@@ -15,13 +15,13 @@ Printsort()
 	local n=$1
 	local path=$2
 	echo "The largest files/directories in $2 are:"
-	ls -sh $path | sort -rn | sed -n $n |awk '{ print "\t" NR "\t"  $1 "\t" $2}'
+	du -sh $path | sort -rn | sed -n $n |awk '{ print "\t" NR "\t"  $1 "\t" $2}'
 	exit
 }
 Printpwd()
 {
 	echo "The largest files/directories in $(pwd) are:"
-	ls -sh | sort -rn |awk '{ print "\t" NR "\t"  $1 "\t" $2}'
+	du -sh | sort -rn |awk '{ print "\t" NR "\t"  $1 "\t" $2}'
 	exit
 }
 if [ -z $1 ]
