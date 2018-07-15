@@ -28,13 +28,13 @@ then
 		  eval "unzip $filename -d $path"
 		  ;;
 	 	"tar")
-		  eval "tar xvf $filename -c $path"
+		  eval "tar xvf $filename -C $path"
 		  ;;
 		"gz")
-		  eval "tar zxvf $filename -c $path"
+		  eval "tar zxvf $filename -C $path"
 		  ;;
 		"bz2")
-		  eval "tar jxvf $filename -c $path"
+		  eval "tar jxvf $filename -C $path"
 		  ;;
 		*) 
 		  echo "Error,please input filename with extension including zip,tar,tar.gz,tar.bz2"
